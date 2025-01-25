@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className='text-blue-300'>Hello from tailwind</div>
+      <div className='text-blue-300 text-3xl font-bold'>Hello from tailwind</div>
     </>
   )
 }
