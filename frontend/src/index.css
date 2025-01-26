@@ -69,8 +69,6 @@ button:focus-visible {
   }
 }
 
-
-
 /* tailwind vairables */
 @theme { 
   --color-primary: #22449F;
