@@ -12,6 +12,7 @@ const entranshipOfferSchema = new mongoose.Schema(
     price: {
       type: Number,
       default: 0,
+      min: [0, "Price must be non-negative"],
     },
     date: {
       type: Date,
@@ -19,9 +20,22 @@ const entranshipOfferSchema = new mongoose.Schema(
     },
     closedDate: {
       type: Date,
+      validate: {
+        validator: function (value) {
+          return !value || value > this.date;
+        },
+        message: "Closed date must be after the creation date",
+      },
     },
+
     requiredSkills: {
       type: [String],
+      validate: {
+        validator: function (skills) {
+          return skills.every((skill) => typeof skill === "string");
+        },
+        message: "Each skill must be a string",
+      },
       default: [],
     },
     companyLocation: {

@@ -13,13 +13,32 @@ const ITCompanySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    employees: {
-      type: [String],
-      default: [],
-    },
     departments: {
       type: [String],
-      default: [],
+      enum: [
+        "Frontend",
+        "Backend",
+        "MERN Stack",
+        "AI/ML",
+        "UI/UX",
+        "Data Analytics",
+        "HR",
+        "App Development",
+        "Android Development",
+        "Ios Development",
+        "Web Development",
+        "Digital Marketing",
+        "Cyber Security",
+        "Cloud Computing",
+        "Blockchain",
+        "DevOps",
+        "Machine Learning",
+        "Data Science",
+        "Artificial Intelligence",
+        "Robotics",
+        "IOT",
+      ],
+      default: ["Frontend", "Backend"],
     },
     isVacancyOpen: {
       type: Boolean,
@@ -28,22 +47,64 @@ const ITCompanySchema = new mongoose.Schema(
     logo: {
       type: String,
       required: true,
+      validate: {
+        validator: function (url) {
+          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+        },
+        message: "Invalid URL format",
+      },
     },
     images: {
       type: [String],
       default: [],
+      validate: {
+        validator: function (urls) {
+          return urls.every((url) =>
+            /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
+          );
+        },
+        message: "Invalid URL format in images array",
+      },
     },
     website: {
       type: String,
       required: true,
+      validate: {
+        validator: function (url) {
+          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+        },
+        message: "Invalid URL format",
+      },
     },
     linkedin: {
       type: String,
       required: true,
+      validate: {
+        validator: function (url) {
+          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+        },
+        message: "Invalid URL format",
+      },
     },
     HRlinkedin: {
       type: String,
       required: true,
+      validate: {
+        validator: function (url) {
+          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+        },
+        message: "Invalid URL format",
+      },
+    },
+    CEOlinkedin: {
+      type: String,
+      required: true,
+      validate: {
+        validator: function (url) {
+          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+        },
+        message: "Invalid URL format",
+      },
     },
   },
   {

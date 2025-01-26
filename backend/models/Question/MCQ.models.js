@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const MCQSchema = new mongoose.Schema(
   {
     question: {
@@ -21,12 +22,45 @@ const MCQSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    Department: {
+    QuestionFild: {
       type: String,
       required: true,
+      enum: [
+        "Frontend",
+        "Backend",
+        "App Development",
+        "DevOps",
+        "Full Stack Web",
+        "ML/AI Development",
+        "UI/UX",
+      ],
+      message:
+        "Invalid field. Please select a valid field from the predefined list.",
     },
     subject: {
       type: String,
+      enum: [
+        "React",
+        "Flutter",
+        "React Native",
+        "kotlin",
+        "Angular",
+        "Vue",
+        "Node",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Python",
+        "Java",
+        "C#",
+        "Figma",
+        ".NET",
+        "SpringBoot",
+        "Django",
+        "NumPy",
+        "Excel",
+        "AWS",
+      ],
       default: null,
     },
     correctAnswer: {
@@ -45,8 +79,16 @@ const MCQSchema = new mongoose.Schema(
     imageAnswer: {
       type: String,
       default: null,
+      validate: {
+        validator: function (url) {
+          return (
+            !url || /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
+          );
+        },
+        message: "Invalid URL format in imageAnswer",
+      },
     },
-    isread: {
+    isRead: {
       type: Boolean,
       default: false,
     },
