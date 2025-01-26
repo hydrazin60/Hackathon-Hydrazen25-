@@ -1,16 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Hero from "./sections/hero";
+import InternshipHub from "./sections/internshipHub";
+import ResumeBuilder from "./sections/resumeBuilder";
+import InterviewPreperation from "./sections/interviewPreperation";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Nav from "./components/nav";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div className='text-blue-300 text-3xl font-bold'>Hello from tailwind </div>
+      <div className="w-screen h-screen px-20 pt-4 bg-neutral overflow-hidden flex flex-col items-center gap-4">
+        <BrowserRouter>
+          <Nav />
+          <div className="min-h-full w-full flex-grow">
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/InternshipHub" element={<InternshipHub />} />
+              <Route path="/ResumeBuilder" element={<ResumeBuilder />} />
+              <Route
+                path="/InterviewPreperation"
+                element={<InterviewPreperation />}
+              />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

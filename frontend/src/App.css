@@ -1,10 +1,25 @@
+<<<<<<< HEAD
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+=======
+#root {
+  max-width: calc(100vw - 1rem);
+  margin: 0px;
+  padding: 0px;
+>>>>>>> biraj
   text-align: center;
+  overflow-x: hidden;
 }
 
+a{
+  color: white;
+}
+
+a:hover { 
+  color: var(--color-secondary);
+}
 .logo {
   height: 6em;
   padding: 1.5em;
