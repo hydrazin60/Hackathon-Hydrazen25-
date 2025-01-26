@@ -141,3 +141,16 @@ export const VerifyUser = async (req, res) => {
     });
   }
 };
+
+export const LoginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+  } catch (error) {
+    console.log(`Something went wrong while logging in the user: ${error}`);
+    return res.status(500).json({
+      success: false,
+      error: true,
+      message: `Something went wrong while logging in the user: ${error.message}`,
+    });
+  }
+};
