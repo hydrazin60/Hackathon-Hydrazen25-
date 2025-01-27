@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import userRouter from "./routes/auth/user.routes.js";
+import internshipHUBrouter from "./routes/InternshipHub/ITcompany.routes.js";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(
 );
 
 app.use("/api/v1/hackathon_hydrazen25/auth", userRouter);
+app.use("/api/v1/hackthon_hydrazen25/internshipHub/companies", internshipHUBrouter);
 
 app.listen(PORT, () => {
   try {

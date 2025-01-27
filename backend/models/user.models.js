@@ -27,6 +27,10 @@ const userSchema = new mongoose.Schema(
       enum: ["user", "admin", "recruiter"],
       default: "user",
     },
+    companyId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ITcompanyModel",
+    },
     isVerified: {
       type: Boolean,
       default: false,

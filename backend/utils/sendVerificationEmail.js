@@ -1,35 +1,3 @@
-// import nodemailer from "nodemailer";
-// export const sendVerificationEmail = async (email, verificationToken) => {
-//   const transporter = nodemailer.createTransport({
-//     service: "gmail",
-//     auth: {
-//       user: process.env.EMAIL,
-//       pass: process.env.PASSWORD,
-//     },
-//   });
-//   const maileOptions = {
-//     from: process.env.EMAIL,
-//     to: email,
-//     subject: "Verify your account",
-//     text: `Please click on the following link to verify your account: http://localhost:4000/api/v1/hackathon_hydrazen25/auth/verify/${verificationToken}`,
-//   };
-//   try {
-//     await transporter.sendMail(maileOptions);
-//     console.log("Email sent successfully");
-//   } catch (error) {
-//     console.log(
-//       `Something went wrong  on Regstering the user ${error.message}`
-//     );
-//     return res
-//       .status(500)
-//       .json({
-//         success: false,
-//         error: true,
-//         message: `Something went wrong . please try again `,
-//       });
-//   }
-// };
-
 import nodemailer from "nodemailer";
 
 export const sendVerificationEmail = async (email, verificationToken) => {

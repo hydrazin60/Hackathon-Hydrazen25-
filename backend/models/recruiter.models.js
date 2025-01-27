@@ -12,6 +12,11 @@ const recruiterSchema = new mongoose.Schema(
       minlength: 2,
       maxlength: 100,
     },
+    companyId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ITcompanyModel",
+      required: true,
+    },
     position: {
       type: String,
       default: "HR",
