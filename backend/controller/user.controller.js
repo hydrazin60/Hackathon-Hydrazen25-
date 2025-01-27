@@ -127,7 +127,7 @@ export const VerifyUser = async (req, res) => {
     const userData = user.toObject();
     delete userData.password; // Remove sensitive information from the response
     delete userData.companyId;
-    
+
     return res.status(200).json({
       success: true,
       error: false,
@@ -205,4 +205,3 @@ export const LoginUser = async (req, res) => {
     });
   }
 };
-

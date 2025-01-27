@@ -52,7 +52,7 @@ const internshipOfferSchema = new mongoose.Schema(
     },
     companyId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "ITcompanyModel",
+      ref: "ITcompany",
       required: [true, "Company ID is required"],
     },
     recruiterId: {
@@ -62,7 +62,7 @@ const internshipOfferSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // Automatically adds createdAt and updatedAt fields
+    timestamps: true,  
   }
 );
 

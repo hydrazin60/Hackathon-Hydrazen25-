@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema(
     },
     companyId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "ITcompanyModel",
+      ref: "ITcompany",
     },
     isVerified: {
       type: Boolean,

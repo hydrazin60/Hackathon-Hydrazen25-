@@ -109,6 +109,16 @@ const ITCompanySchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    internshipOffers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "internshipOffer", // Reference to the InternshipOffer model
+      },
+    ],
+    isVacancyOpen: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
