@@ -62,7 +62,7 @@ const internshipOfferSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true,  
+    timestamps: true,
   }
 );
 
