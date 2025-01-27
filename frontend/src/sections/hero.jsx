@@ -7,7 +7,7 @@ export default function Hero() {
     <>
       <div className="h-full w-full flex flex-col justify-between items-center gap-4">
         <div className="flex flex-col items-center justify-end h-[65%] relative z-10">
-          <h1 className="text-6xl font-bold">Internship Hub</h1>
+          <span className="text-[4rem] font-bold">INTERNSHIP HUB</span>
           <p className="text-lg">Your next internship is just a click away</p>
           <Link to="/InternshipHub">
             <div className="mt-2 py-3 px-7 bg-primary rounded-full relative z-10 flex justify-center items-center gap-2">

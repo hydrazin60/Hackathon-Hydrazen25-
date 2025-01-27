@@ -1,10 +1,17 @@
 export default function InternshipHub() {
-    return (
-        <>
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h1 className="text-4xl font-bold">Internship Hub</h1>
-            <p className="text-lg">Welcome to Internship Hub</p>
+  return (
+    <>
+      <div className="h-full w-full flex bg-amber-100">
+        <div className=" h-full w-96 flex">
+          <aside className="bg-cyan-100 grow mb-12 text-black flex flex-col justify-center items-center gap-4">
+            <span>test</span>
+            <span>test</span>
+            <span>test</span>
+            <span>test</span>
+            <span>test</span>
+          </aside>
         </div>
-        </>
-    );
-    }
+      </div>
+    </>
+  );
+}
