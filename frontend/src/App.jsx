@@ -9,10 +9,10 @@ import Nav from "./components/nav";
 function App() {
   return (
     <>
-      <div className="w-screen h-screen px-20 pt-4 bg-neutral flex flex-col items-center gap-4">
+      <div className="w-screen h-screen px-20 pt-6 bg-neutral flex flex-col items-center overflow-hidden">
         <BrowserRouter>
           <Nav />
-          <div className="min-h-full w-full flex-grow">
+          <div className="max-h-full w-full flex-grow ">
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/InternshipHub" element={<InternshipHub />} />
