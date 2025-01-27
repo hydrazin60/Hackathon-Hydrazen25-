@@ -401,7 +401,6 @@ export const updateCompany = async (req, res) => {
     });
   }
 };
-
 /* with populated fields */
 // export const updateCompany = async (req, res) => {
 //   try {

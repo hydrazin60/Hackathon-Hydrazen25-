@@ -48,17 +48,17 @@ const LongQuestionSchema = new mongoose.Schema(
     imageQuestion: {
       type: [String],
       default: null,
-      validate: {
-        validator: function (urls) {
-          return (
-            !urls ||
-            urls.every((url) =>
-              /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
-            )
-          );
-        },
-        message: "Invalid URL format in imageQuestion",
-      },
+      // validate: {
+      //   validator: function (urls) {
+      //     return (
+      //       !urls ||
+      //       urls.every((url) =>
+      //         /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
+      //       )
+      //     );
+      //   },
+      //   message: "Invalid URL format in imageQuestion",
+      // },
     },
     question: {
       type: String,
@@ -73,16 +73,16 @@ const LongQuestionSchema = new mongoose.Schema(
       default: null,
     },
     imageAnswer: {
-      type: String,
+      type: [String],
       default: null,
-      validate: {
-        validator: function (url) {
-          return (
-            !url || /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
-          );
-        },
-        message: "Invalid URL format in imageAnswer",
-      },
+      // validate: {
+      //   validator: function (url) {
+      //     return (
+      //       !url || /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
+      //     );
+      //   },
+      //   message: "Invalid URL format in imageAnswer",
+      // },
     },
     CodeAnswer: {
       type: String,
@@ -91,6 +91,11 @@ const LongQuestionSchema = new mongoose.Schema(
     isread: {
       type: Boolean,
       default: false,
+    },
+    authorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
     feedback: {
       type: String,
