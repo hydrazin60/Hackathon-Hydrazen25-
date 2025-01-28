@@ -5,7 +5,7 @@ export default function InternshipHub() {
     <>
       <div className="h-[90%] w-full flex p-8 gap-4 justify-center items-start">
         <div className="w-80 flex">
-          <aside className="bg-[#161616] grow rounded-2xl text-white flex flex-col justify-center items-start p-12 gap-4">
+          <aside className="bg-card grow rounded-2xl text-white flex flex-col justify-center items-start p-12 gap-4">
             <div>Machine Learning</div>
             <div>Artificial Intelligence</div>
             <div>Frontend Development</div>

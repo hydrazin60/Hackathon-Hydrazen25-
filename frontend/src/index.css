@@ -73,4 +73,5 @@ button:focus-visible {
 @theme { 
   --color-primary: #22449F;
   --color-neutral: #000204;
+  --color-card: #161616;
 }

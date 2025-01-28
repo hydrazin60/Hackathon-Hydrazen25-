@@ -5,7 +5,7 @@ export default function InternshipCard({
   discription,
 }) {
 return (
-    <div className="bg-[#161616] w-full rounded-2xl flex flex-col justify-start items-start p-8 gap-2">
+    <div className="bg-card w-full rounded-2xl flex flex-col justify-start items-start p-8 gap-2">
         <div className="font-bold text-xl">{Heading}</div>
         <div className="flex justify-start flex-col items-start">
             <div className="flex justify-start items-start gap-2">
