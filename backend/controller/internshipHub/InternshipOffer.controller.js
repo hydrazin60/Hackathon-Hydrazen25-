@@ -140,10 +140,11 @@ export const UploadInternshipOffer = async (req, res) => {
       numberOfVacancies,
       workTime,
       location,
+      Internshipcategory,
     } = req.body;
 
     // Validate required fields
-    if (!title || !description || !location) {
+    if (!title || !description || !location || !Internshipcategory) {
       return res.status(400).json({
         success: false,
         error: true,
@@ -216,6 +217,7 @@ export const UploadInternshipOffer = async (req, res) => {
       numberOfVacancies,
       workTime,
       location,
+      Internshipcategory,
       companyId,
       recruiterId: authorId,
     });

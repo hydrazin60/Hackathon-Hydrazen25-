@@ -10,9 +10,8 @@ import questionRouter from "./routes/Question/Question.routes.js";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_ONLINE_URL;
-console.log(process.env.MONGO_ONLINE_URL)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
