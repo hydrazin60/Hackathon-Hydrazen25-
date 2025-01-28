@@ -11,7 +11,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-const MONGO_URL = process.env.MONGO_URL;
+const MONGO_URL = process.env.MONGO_ONLINE_URL;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
