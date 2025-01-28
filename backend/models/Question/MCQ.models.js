@@ -77,16 +77,21 @@ const MCQSchema = new mongoose.Schema(
       default: null,
     },
     imageAnswer: {
-      type: String,
+      type:  String,
       default: null,
-      validate: {
-        validator: function (url) {
-          return (
-            !url || /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
-          );
-        },
-        message: "Invalid URL format in imageAnswer",
-      },
+      // validate: {
+      //   validator: function (url) {
+      //     return (
+      //       !url || /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
+      //     );
+      //   },
+      //   message: "Invalid URL format in imageAnswer",
+      // },
+    },
+    authorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
     isRead: {
       type: Boolean,

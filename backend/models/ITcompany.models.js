@@ -38,7 +38,7 @@ const ITCompanySchema = new mongoose.Schema(
         "Robotics",
         "IOT",
       ],
-      default: ["Frontend", "Backend"],
+      // default: ["Frontend", "Backend"],
     },
     isVacancyOpen: {
       type: Boolean,
@@ -47,64 +47,77 @@ const ITCompanySchema = new mongoose.Schema(
     logo: {
       type: String,
       required: true,
-      validate: {
-        validator: function (url) {
-          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
-        },
-        message: "Invalid URL format",
-      },
+      // validate: {
+      //   validator: function (url) {
+      //     return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+      //   },
+      //   message: "Invalid URL format",
+      // },
     },
     images: {
       type: [String],
       default: [],
-      validate: {
-        validator: function (urls) {
-          return urls.every((url) =>
-            /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
-          );
-        },
-        message: "Invalid URL format in images array",
-      },
+      // validate: {
+      //   validator: function (urls) {
+      //     return urls.every((url) =>
+      //       /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url)
+      //     );
+      //   },
+      //   message: "Invalid URL format in images array",
+      // },
     },
     website: {
       type: String,
-      required: true,
-      validate: {
-        validator: function (url) {
-          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
-        },
-        message: "Invalid URL format",
-      },
+      // validate: {
+      //   validator: function (url) {
+      //     return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+      //   },
+      //   message: "Invalid URL format",
+      // },
     },
-    linkedin: {
+    Companylinkedin: {
       type: String,
       required: true,
-      validate: {
-        validator: function (url) {
-          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
-        },
-        message: "Invalid URL format",
-      },
+      // validate: {
+      //   validator: function (url) {
+      //     return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+      //   },
+      //   message: "Invalid URL format",
+      // },
     },
     HRlinkedin: {
       type: String,
       required: true,
-      validate: {
-        validator: function (url) {
-          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
-        },
-        message: "Invalid URL format",
-      },
+      //validate: {
+      //   validator: function (url) {
+      //     return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+      //   },
+      //   message: "Invalid URL format",
+      // },
     },
     CEOlinkedin: {
       type: String,
       required: true,
-      validate: {
-        validator: function (url) {
-          return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
-        },
-        message: "Invalid URL format",
+      // validate: {
+      //   validator: function (url) {
+      //     return /^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*$/.test(url);
+      //   },
+      //   message: "Invalid URL format",
+      // },
+    },
+    autherId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    internshipOffers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "internshipOffer", // Reference to the InternshipOffer model
       },
+    ],
+    isVacancyOpen: {
+      type: Boolean,
+      default: false,
     },
   },
   {
